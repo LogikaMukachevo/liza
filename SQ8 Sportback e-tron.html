@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi SQ8 Sportback e-tron</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 20vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/bb20fdc8b18346661df0cf969878d54d7dbf201b/f7b61266-0d15-4c90-86b6-bdf15f7eba95/crop:SMART/resize:2048:1152/sq8e20224513-l-copy');">
+        <h1>SQ8 Sportback e-tron</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Електричний. Сповнений чудових можливостей</font></h1>
+        <p><font face="Muli Extra Light" size="5">Audi e-tron виконав свою роль першопрохідця серед повністю електричних автомобілів. Тому саме зараз настав час офіційно включити його до модельного ряду Audi з присвоєнням відповідного імені - Audi SQ8 Sportback e‑tron.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/1fed76282ff87315591e86aa731a6ca349cde277/cdf45e07-8234-4760-941c-abacc3b0cd4a/walkaroundsq8e-tronau51xsportback-new-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Векторування крутного моменту</font></h1>
+        <p><font face="Muli Extra Light" size="5">На додаток до електричного повного приводу автомобіль оснащено системою електричного векторування крутного моменту з активним і повністю змінним розподілом крутного моменту на задній осі.</font>
+            <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Майбутнє — наш стимул</font></h1>
+                <p><font face="Muli Extra Light"size="4">Насолоджуйтеся перевагами повністю електричного приводу quattro з трьома електродвигунами - одним на передній і двома на задній осі - для створення кращого тягового зусилля. Незабутні враження подарує функція прискорення Boost у режимі S, що забезпечує майже безшумне прискорення з потужністю до 370 кВт та 973 Нм крутного моменту.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/images/bb20fdc8b18346661df0cf969878d54d7dbf201b/f7b61266-0d15-4c90-86b6-bdf15f7eba95/crop:SMART/resize:2048:1152/sq8e20224513-l-copy" alt="Зображення 1">
+                    <p><b>Привод E-volution:</b>Електрична система векторування крутного моменту покращує майже кожну вашу подорож. Насолоджуйтеся керуванням у спортивному стилі, більшою динамікою та особливим контролем. Датчики відстежують стан автомобіля і розподіляють тягове зусилля між задніми колесами з урахуванням індивідуальних особливостей стилю водіння.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/9e56193dd352126177aeaa0b66e1d01509662c92/0c32028a-2a2e-493f-b837-e012028ef154/sq8e20224516withoutcast-l-copy?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Спортивність у найдрібніших деталях</b> З ефектним переднім бампером, ширшими колісними арками та вставкою дифузора, що простягається майже по всій ширині заднього бампера. Пофарбовані в чорний колір гальмівні супорти з символом S і опціональний пакет стилізації Schwarz Plus підкреслюють спортивність образу.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/9b134a71a602a82d3d6f2978e64be4b09b807f53/45532635-37bd-402b-8105-470801113731/q8e20224446withoutcast-l-copy?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Швидкісне заряджання в дорозі:</b> Оригінальні аксесуари Audi пропонують практичні функції, які полегшують повсякденне життя: кріплення для велосипедів дозволяє зручно перевозити велосипеди.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/2a19eb641bb2ef36a2108fcdaec67a46deb89660/880c87a0-d52e-4d7c-97aa-5a169610feb9/q8e20224450withoutcast-l-copy?imwidth=1024" alt="Зображення 3">
+                    <p><b>Дизайн, що сяє:</b> Audi SQ8 e-tron встановлює стандарти для електричної мобільності, орієнтованої на майбутнє: завдяки прогресивним акцентам нової стратегії ідентифікації Audi, як-от кільця Audi у 2D‑дизайні, оновлений дизайн передньої частини та доступна як опція проєкційна підсвітка решітки радіатора Singleframe.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/e1b234e4f2ff095c7f0f71ab5ad6c4bfb45146ab/7d193b86-c283-4157-9225-f9d170d89ff2/exteriormirrors15secclean-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Візіонерське бачення</b> Маленькі камери в доступних як опція віртуальних зовнішніх дзеркалах заднього виду проєктують зображення на 7-дюймові OLED-дисплеї в салоні. Ви можете чітко бачити транспортні засоби, що наближаються, попри відблиски фар. До того ж камери забезпечують покращений коефіцієнт аеродинамічного опору.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/df452b05ea3deec572598d5dc0041496247f336a/6dcd7a90-b468-42ee-91ff-39ef23ceb185/interiorq8e-tronau51xsportback-l" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Увага до дрібниць</b> Відкрийте для себе інтер'єр Audi SQ8 e‑tron: строчка червоного кольору від Audi Sport GmbH, доступні як опція спортивні передні сидіння, оздоблені шкірою Valcona з тисненим символом S, і доступні як опція декоративні вставки з карбону з малюнком плетіння «квадрат».</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <p><b>Отримуйте енергію завдяки рекуперації:</b> Система рекуперації дозволяє відновлювати енергію - як під час руху, так і під час гальмування. Рекуперація тяги стає активною, коли ви знімаєте ногу з педалі акселератора. Ступінь рекуперації може бути встановлена автоматично або вручну за допомогою пелюсток на кермі - регулюється в три етапи.</p>
+            </div>
+            <div class="feature">
+                <p><b>Спортивна атмосфера преміальної якості</b> Задавайте стандарти преміальності та спортивності завдяки доступним як опція високоякісним декоративним вставкам, як-от з технічної тканини кольору Anthrazit або карбону з малюнком плетіння «квадрат». Інтер'єр ідеально доповнюють педалі з неіржавної сталі. Додатково модель S також укомплектовано килимками з символом S.</p>
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/1164b1db486d6871517e5275979e1f14a6dafab3/29a99fda-d3ab-47bd-83cf-3d29bc812760/sq8e20224525-l?imwidth=375" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+            <div class="content1">
+                <p><b>Більше місця для спортивного азарту</b> Дайте собі простір. У просторому салоні позаду можуть зручно розміститися до трьох осіб. Багажний відсік має вражаючий об'єм - до 528 л, який сягає 1567 л при складених спинках сидінь. Додатковий практичний варіант для зберігання, який ви можете використовувати - простір під капотом з додатковим об'ємом 62 літри.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/511s">Конфігуратор</a>
+            <a href="https://www.audi.ua/q8-e-tron/sq8-sportback-e-tron/about#lightbox=13b30089-92a0-4e0e-836c-1e686b723523">Габарити</a>
+            <a href="https://www.audi.ua/q8-e-tron/sq8-sportback-e-tron/about#lightbox=dfe444b5-2cb9-48eb-843b-7c9116d7ffaf">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi A6 Limousine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 65vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/95f1ef858e1f4a1c3fcde6228ca97ffbd68eac47/9e1f307f-f0c7-4d22-8cd1-445bcc060847/crop:SMART/resize:1920:1080/aa6l1810123-copy');">
+        <h1>Audi A6 Limousine</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Класична зовнішність з атлетичними рисами</font></h1>
+        <p><font face="Muli Extra Light" size="5">Audi A6 Limousine у лінійці оздоблення advanced виглядає спортивно й елегантно від решітки радіатора Audi Singleframe з новим дизайном спереду до дифузора оновленої форми в задній частині.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/becc2ab5bb84c6b6588e944ed14e17987de50cc2/1bf45ca4-f68a-4e3b-bcb3-1c5ee23eb118/walkarounda6au581limousine1920x1920#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Відвертий виклик. З усіх точок зору.</font></h1>
+        <p><font face="Muli Extra Light" size="5">Передня частина Audi A6 Limousine вражає своєю прогресивністю: від решітки радіатора Audi Singleframe, що стала ще ширшою, і бічних повітрозабірників з хромованими облямівками у спортивному дизайні до вузьких фар. Загострена плечова лінія з потужними вигинами над колісними арками підкреслює архітектуру quattro. Зовнішні дзеркала заднього виду встановлені на верхній частині дверей, посилюючи спортивний вигляд.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Ще більше простору</font></h1>
+                <p><font face="Muli Extra Light"size="4">Просторий салон автомобіля Audi A6 Limousine радує вас численними зручностями, концепцією керування з можливістю персоналізації та низьким рівнем шуму.</font></p>
+            </div>
+        </div>
+        <h1 class="ou"><font face="Muli Extra Light">Особливості</font></h1>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/37db264d01bd1902ff22e1ae151a23a73b436df9/c1edf844-cea4-41bd-8c1f-c56e7ac7d7d3/aa6l1810233-2-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Виразний вигляд задньої частини:</b>плавна, купеподібна лінія даху елегантно переходить у рельєфну задню частину. У лінійці advanced вона вражає характерною планкою з оздобленням під алюміній і оновленим дифузором  чорного кольору з декоративним молдингом сріблястого кольору Selenitsilber.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/f5cec4b8645e49cdea8b6527da7b80ed9a09f568/f51761b9-fa61-4ff1-8f4f-f3569b044820/a6saloonturnsignal2-l" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Динамічні покажчики повороту:</b> світлодіодні фари головного світла HD Matrix із динамічними покажчиками повороту справляють ще більше враження. Вони забезпечують оптимальне освітлення дороги, зменшують відблиски та роблять Audi А6 візуально ще ширшим.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/1f244ac3a56e1e93eb03c809b66ce0ec617fe233/ce6c71a9-6fb4-4a8c-a99b-213963edb1ad/a6202005312?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Ближнє світло:</b> доступні на замовлення світлодіодні фари головного світла HD Matrix з динамічною світловою анімацією і динамічними покажчиками повороту забезпечують точне освітлення дороги світлом, подібним до денного, у режимі як ближнього, так і дальнього світла.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h1><font face="Muli Extra Light">Системи допомоги водієві:</font></h1>
+                <p><font face="Muli Extra Light" size="4"> ми пропонуємо широкий вибір систем допомоги водієві - для великих відстаней, для міста та для паркування.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Динамічне рульове керування всіма колесами:</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">динамічне рульове керування всіма колесами поєднує в собі переваги системи динамічного рульового керування і системи рульового керування всіма колесами, дозволяючи покращити динаміку та полігити комфорт водіння. Система підтримує водія шляхом активного втручання в рульове керування на передній і задній осях, покращуючи комфорт водіння.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Технологія Mild Hybrid:</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">усі двигуни Audi A6 Limousine оснащені технологією Mild Hybrid компанії Audi, яка дозволяє зменшити витрату пального під час повсякденного використання завдяки рекуперації енергії.</font></p>
+            </div>
+        </div>
+        <div class="container1">
+        <div class="text content">
+            <h1>Більше комфорту для всіх</h1>
+            <p>Завдяки збільшеному внутрішньому простору салону виграли у першу чергу пасажири першого ряду, для ніг яких пропонується більше вільного місця. Також більше простору тепер пропонується в зоні голови і плечей водія й пасажирів всіх сидінь. Загальна вантажна ширина багажного відсіку та його об’єм 530 літрів пропонують зручні можливості для зберігання речей. Продуманий аеродинамічний дизайн Audi A6 забезпечує приємну тишу в салоні навіть на високих швидкостях.</p>
+        </div>
+        <div class="content1">
+            <img src="https://cf-cdn-v6-api.audi.at/files/218a159915f51b0ea88cf09f00db6614a8779fc9/bb0ead2b-7c56-446d-92f7-bb191afce1a5/aa6d1810075?imwidth=768" alt="Audi A6 Limousine">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/424">Конфігуратор</a>
+            <a href="https://www.audi.ua/a6/a6-limousine/about#lightbox=91e892c5-a476-4763-b5cf-1a957399c6ef">Габарити</a>
+            <a href="https://www.audi.ua/a6/a6-limousine/about#lightbox=8a9b6019-072d-46e1-969d-1728b75316cf">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

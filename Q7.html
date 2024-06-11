@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi Q7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 20vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/c8d2ab75b3b1f584c1ecaf40ede5a066ace6eb51/e8bcb019-1063-4242-a9f8-34d17e213224/crop:SMART/resize:1200:675/q720235404-l-highest');">
+        <h1>Q7</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Динамічність поєднується з жагою до пригод.</font></h1>
+        <p><font face="Muli Extra Light" size="5">Під час руху, навіть на високих швидкостях, стандартний повний привід quattro, потужні двигуни та ходова частина з регульованими амортизаторами забезпечують неперевершені ходові якості. Надихайтеся динамікою позашляховика Audi Q7.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/5007cc122a4235dcaa2c94c6f06b57134fe9441d/b548681d-e743-4cc6-81b7-13c1769d1d77/q7-pa-camflight-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Міць та елегантність в екстер’єрі.</font></h1>
+        <p><font face="Muli Extra Light" size="5">Новий позашляховик Audi Q7 демонструє свої позашляхові гени завдяки класичній архітектурі quattro та потужній плечовій лінії. Вражаюча решітка радіатора Audi Singleframe, кільця Audi у плоскому двовимірному дизайні та, зокрема, дизайнерські особливості пакету екстер’єру S line надають автомобілю спортивного характеру.</font>
+            <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Сім в одному:</font></h1>
+                <p><font face="Muli Extra Light"size="4">З опційним третім рядом сидінь автомобіль здатен вмістити до семи пасажирів. Для всіх задніх сидінь доступні кріплення для дитячих крісел ISOFIX з верхнім ременем Top Tether. Сидіння другого і третього ряду можна скласти, отримавши до 1908 літрів простору для перевезення речей.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/259ce2e4116e5786425fffcb8715318a22fbadbd/1fa8142c-3825-4e65-b895-5f9c5b7c9825/q720235390-l-copy?imwidth=1024" alt="Зображення 1">
+                    <p><b>Прогресивний зовнішній вигляд.</b>З пакетом екстер’єру S line ви підкреслюєте спортивність позашляховика Audi Q7. Сюди входять глянцевий пакет і спортивна адаптивна пневматична підвіска. Ефектна передня частина також вирізняється бампером у стилі S line кольору кузова та великими повітрозабірниками.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/2ba3840bcb945cb1a1b4bd6ca1e2d22d59463fa3/4af95e74-38ec-4b54-9e9e-cdbb456b963d/q720235411de-l?imwidth=1344" alt="Зображення 3">
+                    <p><b>Де краще сісти? Будь-де.</b> Оптимальну бічну підтримку забезпечують передні спортивні сидіння plus зі шкіри Valcona з тисненням «S», ромбовим візерунком стібків і контрастною строчкою сірого кольору. Сидіння і спинка, а також поперекова опора регулюються пневматично, щоб пристосуватися до ваших контурів.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/5eb814738ec30b3a0ad7cc2f38e44640a5887a71/5c9412f0-a21b-4577-abe5-3dc381f9bde5/q720235397-l-crop-copy?imwidth=768" alt="Зображення 3">
+                    <p><b>Потужне буксирування, легке маневрування:</b> Опціональний висувний фаркоп з електроприводом перетворює позашляховик Audi Q7 на буксирувальник з тяговим зусиллям до 3500 кг. Асистент причепа полегшує маневрування та може спрямовувати причіп у вказаному вами напрямку під час руху заднім ходом.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/0f5f3fc79224d014262e0e2751ab20ec6f913ec6/7934b5e8-3971-411c-b566-7a31c9ce0046/q7-pa-lhch-l" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Освітлення шляху у майбутнє</b> Маленькі камери в доступних як опція віртуальних зовнішніх дзеркалах заднього виду проєктують зображення на 7-дюймові OLED-дисплеї в салоні. Ви можете чітко бачити транспортні засоби, що наближаються, попри відблиски фар. До того ж камери забезпечують покращений коефіцієнт аеродинамічного опору.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/652daded41af9b0557aed5700bef58b4e8657440/48b58353-2f79-4d6a-818f-535ed4bc0f86/q7-pa-camflight-interior-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Салон: якість, яку помічаєш одразу.</b> Для вашого позашляховика Audi Q7 доступні нові декоративні вставки з дерева, алюмінію або карбону. Матові декоративні вставки з шліфованого алюмінію з лінійним тисненням silver підкреслюють гармонійне загальне враження від вашого автомобіля.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/65bf79ef2ef8e5fe5a9bdbca070e0e2bdd7b9352/d1c8d5f8-e248-4d86-8a9b-a6b6e3602027/q720235394-l-copy?imwidth=1024" alt="Зображення 3">
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/f19e21fd773fc7879fba0865e6ca50ed30176faf/ab30d35d-6743-4050-8b03-8f8edc9242e2/q720235396-l-1-copy?imwidth=1024" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+            <div class="content1">
+                <p><b>Потужна динаміка.</b> На вибір доступні потужні двигуни, які забезпечують легке керування вашим позашляховиком Audi Q7. Додатково можна обрати адаптивну пневматичну підвіску Adaptive Air Suspension sport — спортивну пневматичну підвіску для високодинамічного водіння з підвищеним комфортом.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/553">Конфігуратор</a>
+            <a href="https://www.audi.ua/q7/q7/about#lightbox=cc2764f6-1798-4a5f-9b66-9b9d7a117fe6">Габарити</a>
+            <a href="https://www.audi.ua/q7/q7/about#lightbox=8418ed92-67f0-47eb-abce-56597899a4e3">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

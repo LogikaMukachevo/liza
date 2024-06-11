@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi A4 allroad quattro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 90vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/406b9d2ab0450c9de5ce141c52616a481e6321ec/820a011b-fcd5-4673-bec5-0f18f74171f1/crop:SMART/resize:1200:675/aa4a1910032-l-copy');">
+        <h1>A4 allroad quattro</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Виразний універсал</font></h1>
+        <p><font face="Muli Extra Light" size="5">Позашляхові можливості Audi A4 allroad quattro ґрунтуються на комбінації повного приводу quattro, доступного в стандартній комплектації, потужного двигуна та підвіски, призначеної для руху бездоріжжям.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/cdb77eb7e4b460045e9eb23f7e2034a4dca2f8ad/c10e4a69-8884-424a-b433-192f4b7d03b8/camflighta4allroad-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Враження від керування</font></h1>
+        <p><font face="Muli Extra Light" size="5">Спеціальна підвіска allroad, що входить до стандартної комплектації Audi A4 allroad quattro, забезпечує вище на 23 мм положення кузова у порівнянні з базовою моделлю.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Унікальна зовнішність</font></h1>
+                <p><font face="Muli Extra Light"size="4">Візуально Audi A4 allroad quattro підкреслює свій позашляховий характер характерним дизайном екстер’єру. Арки коліс, як і передній та задній бампери й бічні пороги чітко окреслені та виділені кольором. Диски збільшені на 12 мм у порівнянні з базовою моделлю, також збільшена колія передніх та задніх коліс. Ззаду звертають на себе увагу захисна накладка заднього бампера та оригінальний дифузор. Спереду — потужна решітка радіатора Singleframe з вертикальними планками, абсолютний символ марки.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/a1dd42cb99dc4c46e6947223aa257fda42ae0cdd/eade0b60-7aae-4e5e-af8c-a9aefdc49594/a420223673-l-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Екстер’єр, передня частина:</b>Виразну передню частину автомобіля прикрашає решітка радіатора Singleframe, вертикальні стійки в решітці радіатора та вставки в бічних повітрозабірниках кольору «чорний глянець». Кільця Audi чорного кольору підкреслюють спортивний характер автомобіля.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/0ed3cb6c838b5e6944483774fccf9dcaff27ed11/dec8a2da-87b3-4e81-8e6f-4da4b2df5bb4/a420223676-l-copy?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Екстер’єр, задня частина:</b> Виразна задня частина набуває спортивних рис завдяки вставці дифузора та декоративному молдингу на кришці багажного відсіку  кольору «чорний глянець». Чорні кільця Audi і чорні написи моделі стильно підсумовують характерний загальний образ.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/155cc7a027010489f1f57982bc9515d7ff4a8b25/9193e002-2e2a-4d70-9edb-b8b6d68659d7/trunkshota4allroadquattro-l" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Функційність та універсальність:</b> Об’єм багажного відсіку Audi A4 allroad quattro становить 495 л, за складених спинок задніх сидінь (у співвідношенні 40: 20: 40) — аж 1495 л. До стандартного обладнання входять, наприклад, кришка багажника з електроприводом та система дистанційного розблокування спинок сидінь.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/605cf8bb85549d4b17f000f062396475cb3870a7/d68e9d6c-ca90-4a77-9672-d2c7809aff24/aa4d1910181-l?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Посадка:</b> Накладки порогів передніх дверей із алюмінієвими вставками і напис allroad входять у стандартну комплектацію Audi A4 allroad quattro.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h1><font face="Muli Extra Light">Неймовірне освітлення</font></h1>
+                <p><font face="Muli Extra Light" size="4"> Доступні як опція матричні світлодіодні фари містять модуль динамічної анімації функцій допоміжного освітлення та динамічного покажчика повороту.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Прогресивний та спортивний</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">Завдяки доступному як опція пакету стилізації Black pro ви зможете підкреслити прогресивний характер Audi A4 allroad quattro. Чорні елементи дизайну створюють спортивні акценти й динамічний облік.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Корпуси зовнішніх дзеркал заднього виду:</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">Глянцеві корпуси зовнішніх дзеркал заднього виду чорного кольору виразність спортивного образу, властивого Audi A4 Avant allroad з доступним як опція пакетом стилізації Black Pro.</font></p>
+            </div>
+        </div>
+        <div class="container1">
+        <div class="content1">
+            <img src="https://cf-cdn-v6-api.audi.at/files/4468d2635bc53d89932355c63c4ede0f3b54d4e5/6a73bbd6-e05b-4bc5-bfe9-d55a75b3719e/aa4a1910102-l-copy?imwidth=1920&imdensity=1" alt="Audi A6 Limousine">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/383">Конфігуратор</a>
+            <a href="https://www.audi.ua/a4/a4-allroad-quattro/about#lightbox=28646389-90cd-4d27-889b-fbbd2ad61b63">Габарити</a>
+            <a href="https://www.audi.ua/a4/a4-allroad-quattro/about#lightbox=20f4f15f-6e1b-4238-baaa-124605b3c622">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

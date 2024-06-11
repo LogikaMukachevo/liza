@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi SQ5 Sportback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 10vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 50vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/8523e508c3b5c37db727e968b6aa9f849ce48feb/3735f7f7-c614-4c41-a87a-da7679c22326/crop:SMART/resize:2048:1152/sq5202013751-l-copy');">
+        <h1>SQ5 Sportback</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Спортивний. Потужний. Динамічний.</font></h1>
+        <p><font face="Muli Extra Light" size="5">Спортивний позашляховик із купеподібним силуетом - максимально універсальний автомобіль із численними можливостями для оптимізації простору.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/62f07a6cd177fcca16bd3a9b92332e52d116eb1d/1216de44-d839-4402-82f0-eed855088a5b/walkaroundsq5sportback-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Захоплюючий та потужний</font></h1>
+        <p><font face="Muli Extra Light" size="5">V-подібний 6-циліндровий двигун, оснащений турбокомпресором з електроприводом, забезпечує Audi SQ5 Sportback розгін до максимальної швидкості, обмеженої електронікою на позначці 250 км/год. За передачу потужності відповідає 8-ступенева АКП tiptronic, яка вирізняється швидкістю та плавністю перемикання передач. Наявний у базовій комплектації постійний повний привод quattro із самоблоківним міжосьовим диференціалом забезпечує активний перерозподіл потужності між осями. У стандартному режимі потужність розподіляється у співвідношенні 40:60, але у разі потреби для оптимізації зчеплення з поверхнею на передню вісь можуть бути спрямовані до 70 %, а на задню - до 85 % потужності.</font>
+            <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Аура потужності</font></h1>
+                <p><font face="Muli Extra Light"size="4">Спортивна динаміка та нестримна потужність, що одразу привертають увагу: верхній спойлер серії «S» та купеподібна лінія даху в поєднанні з хромованими спареними патрубками випускної системи овальної форми підкреслюють спортивну елегантність Audi SQ5 Sportback. Захоплюючі враження від керування гарантовані.
+
+                    Спереду Audi SQ5 Sportback виглядає також чудово: цьому сприяють решітка радіатора Audi Singleframe, бампер серії «S» та чітко окреслені контури повітрозабірників з алюмінієвими рамками. Дизайн автомобіля демонструє потужність та видатну аеродинаміку.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/aea6cb7911e944ce8306ce9c249feed46b7479f4/bf1b5b1c-9644-4f2f-b35a-70b63de40f95/q520202202-xl-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Спортивний з усіх боків:</b>похила плавна лінія задньої частини кузова, яка підкреслює купеподібні обриси даху й аеродинамічні якості автомобіля. Впевнений дизайн довершують дифузор із поперечною планкою разом з хромованої накладкою на всю ширину автомобіля та спортивний верхній спойлер.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/6879a4c65dadf78957647f2ea4ae06307f9c1648/53f36af4-476c-4c40-bcc4-462280fe0caa/q520202207-xl-copy?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Вражаючий і спереду</b> Передня частина Audi SQ5 Sportback з ефектними повітрозабірниками та пласкою і широкою решіткою радіатора Audi Singleframe свідчать про неперевершену впевненість у собі.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/1992b1d540d99ba1b1aa85f7a9f9f3803af420ff/713264b6-af7a-4cf1-93eb-02f4471d9c49/q5202013551-xl?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Спортивний та елегантний:</b> передні опціональні спортивні сидіння забезпечують оптимальне положення тіла і мають розвинені боковини. Оббивка сидінь зі шкіри Fine Nappa кольору Criollo Brown із контрастною строчкою та тиснений логотип «S» на спинках передніх сидінь додатково підкреслюють спортивний характер автомобіля.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/images/9a659b3394ea916744a804151c7c982c8f6a1092/fe76fe90-a23c-4a91-83f9-8b336dd6ba58/crop:SMART/resize:1920:1080/sq5202013751-l-1-copy" alt="Зображення 3">
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/images/f4f6b5205e9df60584155fccf1066abf8225b3f4/896d2a81-2f31-4b8b-b6bc-e9d744e76d1c/crop:SMART/resize:1920:1080/sq5202013741-l" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+            <div class="content1">
+                <p><b>Несхожий на інших. Audi exclusive</b> Перетворіть свій Audi SQ5 Sportback на автомобіль, що дарує натхнення, такий саме неповторний, як ви, — за допомогою Audi exclusive. Завдяки вишуканому декору, різнокольоровій шкіряній оббивці та індивідуально підібраному лакофарбовому покриттю із широким асортиментом кольорів. Саме такий, яким його бачите ви.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/386s">Конфігуратор</a>
+            <a href="https://www.audi.ua/q5/sq5-sportback/about#lightbox=e47c1dfb-0084-4d00-bf79-a1939ca6be70">Габарити</a>
+            <a href="https://www.audi.ua/q5/sq5-sportback/about#lightbox=787a040e-2d26-4ab0-be82-2759c9317e8a">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

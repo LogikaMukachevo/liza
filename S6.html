@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S6 Limousine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 80%;
+            height: 80%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 80vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/e5e8a1c18f254b76d259652af3d306e3dc7424cd/46c8e95f-23a8-45c9-89e9-02bdaa5a1d7c/crop:SMART/resize:2048:1152/as6l1810063-l-copy');">
+        <h1>S6 Limousine</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Вражаюча потужність</font></h1>
+        <p><font face="Muli Extra Light" size="5">Джерелом рушійної сили для Audi S6 слугує 3-літровий V-подібний 6-циліндровий двигун TDI. Завдяки потужності 344 к.с. і максимальному крутному моменту 700 Н·м автомобіль розганяється від 0 до 100 км/год за 5,0 с.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/f7da34e294a91aefa0f745fdaee69f496b5907f4/73acb276-aebb-4139-82c9-085d35d03c4e/walkarounds6au581limousine1920x1920#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Спортивний технологічний - інтер’єр</font></h1>
+        <p><font face="Muli Extra Light" size="5">Стандартні спортивні сидіння спереду забезпечують надійне утримання завдяки розвиненим боковинам. Як опцію також можна вибрати передні спортивні сидіння plus з оббивкою зі шкіри Valcona з ромбоподібним візерунком. Керування повністю цифровою комбінацією приладів Audi virtual cockpit plus з екраном Full-HD діагоналлю 12,3 дюйма здійснюється за допомогою багатофункціонального керма.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Екстер’єр</font></h1>
+                <p><font face="Muli Extra Light"size="4">У передній частині Audi S6 Limousine домінує широка решітка радіатора Audi Singleframe чорного кольору з новим дизайном чарунок. Бічні повітрозабірники з декоративними елементами сріблястого кольору Selenitsilber довершують динамічний образ.</font></p>
+            </div>
+        </div>
+        <p><font face="Muli Extra Light" size="5"><b>Виразні деталі:</b> корпуси зовнішніх дзеркал заднього виду у стандартній комплектації доступні з оздобленням під алюміній.</font></p>
+        <p><font face="Muli Extra Light" size="5"><b>Образ,що вражає потужністю:</b> у задній частині спортивний вигляд гармонійно доповнюють дифузор нової форми матового кольору Dark Chrom і задній спойлер в колір кузова. 20-дюймові легкосплавні диски доступні вже у стандартній комплектації. Як опцію можна обрати 21-дюймові диски, а також забарвлені у червоний колір гальмові супорти.</font></p>
+        <p><font face="Muli Extra Light" size="5"><b>Виразні деталі:</b> корпуси зовнішніх дзеркал заднього виду у стандартній комплектації доступні з оздобленням під алюміній.</font></p>
+        <div class="features">
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/42ecaf8f4b250c8d097e202288e0819ae00cd6ba/00aae412-3317-4c4d-9223-676d07007447/as6d1810181-m-copy" alt="Зображення 3">
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/43ca3fba608d3535514b1ee4d36c717c93fe0186/5eded887-bf6b-4a1b-b916-0731395b19f4/as6d1810202tdi-s-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/3c8ebfa0f58f1c7f240a1ef597b1040761bd8fb0/e1b0caf1-bed7-4fc2-80c9-38b3f77416b3/as6d1810191-s?imwidth=1920&imdensity=1" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+        <div class="text content">
+            <h1>Інтер’єр</h1>
+            <p>Спортивний, функціональний, комфортабельний: салон Audi S6 Limousine.</p>
+        </div>
+        <div class="content1">
+            <img src="https://cf-cdn-v6-api.audi.at/images/dedf9f16f663387e2963c48e6c4c87a6cf4ba83a/ed957351-edc9-42de-bc61-65b8e96858ff/crop:SMART/resize:1920:1080/as6ld1810035tdi-l" alt="Audi A6 Limousine" height="100">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/424s">Конфігуратор</a>
+            <a href="https://www.audi.ua/a6/s6-limousine/about#lightbox=7654624f-4540-4260-99b7-06bf01750e0b">Габарити</a>
+            <a href="https://www.audi.ua/a6/s6-limousine/about#lightbox=3e692173-3ccf-44ed-a3b4-2af5c52ac6fb">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

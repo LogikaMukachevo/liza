@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi Q3 Sportback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 20vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/8e779d41871ea84ded7318cfc109ac51892879d7/1e030cb9-f031-4911-94a6-e33936931198/crop:SMART/resize:3840:2160/1920x1080-aq3191008v3-copy');">
+        <h1>Q3 Sportback</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Функціональність</font></h1>
+        <p><font face="Muli Extra Light" size="5">Об'єм багажного відсіку легко змінюється від 530 до 1.400 літрів. Кришка багажного відсіку з опціональним електроприводом зручно відчиняється рухом ноги, коли ваші руки зайняті.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/5f0777464164a460b3b912d06b4247f7a8197522/909029ae-0d3d-47f9-bac9-b0270f37dafe/walkaroundq3sportback#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Прогресивний дизайн</font></h1>
+        <p><font face="Muli Extra Light" size="5">У передній частині автомобіля увагу привертають велика восьмикутна решітка Singleframe і бічні повітрозабірники. З погляду збоку одразу помітною стає купеподібна форма кузова автомобіля. Подовжена елегантна лінія крил створює основу динамічного силуету автомобіля та підкреслює його спортивність.
+
+            Відмінною ознакою задньої частини є плавна похила лінія даху, низьке заднє скло й гострокутна форма задніх фар. Наша гнучка концепція комплектування дозволяє налаштувати екстер'єр автомобіля відповідно до ваших побажань.
+            
+            Оберіть пакет S line і отримайте свій Audi Q3 Sportback з бамперами в контрастному кольорі, 18-дюймовими колесами з 5 V-подібними спицями й підсвічуваними накладками передніх порогів з алюмінієвими вставками та логотипом S.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Універсальний і функціональний</font></h1>
+                <p><font face="Muli Extra Light"size="4">Заднє сидіння має достатньо місця для трьох пасажирів. Його можна пересувати в поздовжньому напрямку на 130 мм. Нахил спинки з трьох сегментів регулюється в 7 положеннях. Об'єм багажного відсіку змінюється від 530 до 1400 літрів. Як опцію ми пропонуємо кришку багажного відсіку з електроприводом, яку можна зручно відчиняти рухом ноги, коли ваші руки зайняті.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/1704ae977ac268a3e7d71fbd270d42b08bcf01c9/6102b648-63e5-451d-a169-2836be957d8b/aq31910073-l-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Технічні переваги:</b>Спортивна підвіска Q3 забезпечує хороше зчеплення з дорогою, а система прогресивного рульового керування надає виключну керованість. Режими Audi drive select дозволяють змінювати динамічні характеристики автомобіля через використання шести різних режимів.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/0a6c4b96e6e61ce1e7a77850e4118b045320001d/7636c4fd-5931-4aba-9e90-5b7da0be5db9/1920x900-aq3d1910051?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Непомітні помічники</b> камери кругового огляду дозволяють контролювати всю зону безпосередньо навколо Audi Q3 Sportback. Адаптивний асистент керування підтримує водія під час прискорення, гальмування та підтримування швидкості й дистанції.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/974e0375ebac573ff5c936a3cdf150f7dbc3063c/1d7e9536-d603-40d5-ab2d-1337d700f6cf/aozq31910023-copy?imwidth=1344" alt="Зображення 3">
+                    <p><b>Гнучке транспортування:</b> Оригінальні аксесуари Audi пропонують практичні функції, які полегшують повсякденне життя: кріплення для велосипедів дозволяє зручно перевозити велосипеди.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/2e7683b496608e9cae0885b7f2b51df00ae54309/6094a2a9-b319-49c0-84db-ba76545e8748/1920x900-aq3d1910112?imwidth=1920&imdensity=1" alt="Зображення 3">
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/aec632e2b404c7c164bfa5c6b6a9342fd791bd6e/2d7a5079-9f3f-4718-a42d-eb1d35897157/aq3d1910093-l?imwidth=1920&imdensity=1" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+            <div class="content1">
+                <p><b>Audi exclusive, інтер’єр</b> Розставте додаткові акценти в інтер’єрі завдяки кольоровій строчці червоного кольору від Audi Sport GmbH: контрастна строчка червоного кольору на сидіннях і підлокітниках дверей, доступному як опція центральному підлокітнику, ободі керма, чохлі важеля/селектора коробки передач та на килимках чорного кольору з чорною окантовкою.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/349">Конфігуратор</a>
+            <a href="https://www.audi.ua/q3/q3-sportback/about#lightbox=9aea40f0-1b77-4d38-ae91-541b0d884dde">Габарити</a>
+            <a href="https://www.audi.ua/q3/q3-sportback/about#lightbox=d1fae7bf-80b0-4ff5-94c1-9a73c72c7b58">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

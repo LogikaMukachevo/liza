@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi A8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 85vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 80px;
+        }
+        .content1 {
+            max-width: 1300px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/c902b8cdd45d0265890e40ed633ec1309edd2515/b870d587-00fa-412d-8275-f0ecbb24ac00/crop:SMART/resize:1080:608/a8202132111withoutcast-l-copy');">
+        <h1>Audi A8</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Комфорт кожен день</font></h1>
+        <p><font face="Muli Extra Light" size="5">Інтер'єр вирізняється матеріалами та якістю виконання, чиє поєднання створює відчуття розкоші. Додаткові комфортабельні індивідуальні контурні сидіння спереду, задні сидіння з додатковими комфортними підголівниками й загальна атмосфера запрошують вас покататися в першому класі в будь-який час.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/3987d25e952c7aee9ab79092cef630f80addef02/0fea3529-2f39-42d7-b6a0-55fcc5c813e9/walkarounda8paau651limousine1920x1920#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Яскраві акценти</font></h1>
+        <p><font face="Muli Extra Light" size="5">Задня частина Audi A8 вражає новим дизайном задніх OLED-ліхтарів і додатковим хромованим зовнішнім пакетом із хромованими планками на передньому й задньому бамперах. Збоку накладні планки надають спортивні акценти.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Більше світла</font></h1>
+                <p><font face="Muli Extra Light"size="4">Додатковий панорамний скляний дах. Величезна поверхня тонованого скла надає інтер'єру ексклюзивну атмосферу й приємний світловий настрій. Відкритий панорамний скляний дах дозволить впустити в салон автомобіля свіже повітря. Глянцева чорна поверхня даху підкреслює прогресивний зовнішній дизайн.</font></p>
+            </div>
+        </div>
+        <h1 class="ou"><font face="Muli Extra Light">Особливості</font></h1>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/8f0cf524f9e222a4ae0980dee02c1c274d7b7677/1e5189be-35e0-4e2a-a5b7-471104966d88/a8202241701de-l?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Приїжджайте спокійним:</b>З додатковими комфортними індивідуальними контурними сидіннями спереду, які можуть зберегти ваш особистий профіль сидіння завдяки функції пам'яті. За бажанням функція вентиляції та масажу сидінь спереду й ззаду забезпечує додатковий комфорт. Почувайтеся добре й отримуйте приємні враженні від поїздки, навіть на великі відстані.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/c9a3e9e828c8da6b7f2a517a7e84da62baa171f0/ae619f96-9640-42a3-b2bd-8b43bc6baeb8/a820213220-xl-higher?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Подорожуйте в невимушеній атмосфері:</b>Завдяки дивовижній акустиці салону відкрийте для себе власну зону комфорту. Розслабтеся на комфортабельних сидіннях індивідуального контуру з перфорованої шкіри Valcona в кольорі бежевого перламутру.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/be7176e5fd0f2488c376b038dd43166d5c907c86/65e62c42-dd53-47b0-803d-4ac730f3ffc0/a8202241661dewithoutcast-l?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Надзвичайний кожного дня:</b>Дизайн інтер'єру характеризується високоякісними матеріалами й першокласним виконанням. Отримайте чудове відчуття свободи завдяки збільшеному простору для голови та ніг. Почувайтеся під час поїздки майже як удома.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/c5dd13b03963c5ab2f7c7c539d789f294c31eedf/a02c2719-e080-4ee8-be45-8ccc5ce7198b/a8202241721-l?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Інтуїтивно зрозумілий, інтегрований та універсальний:</b>Відображайте вміст головного пристрою на вбудованих екранах у передніх сидіннях і використовуйте, наприклад, для відеопотоків, ігор чи застосунків. Завдяки багатофункціональному центральному блоку керування в задній частині ви також можете окремо налаштувати різні функції клімат-контролю, сидіння та комфорту.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/d5451ad12daf2c45691a1a0425f606b36104a48d/75a25a9d-b2f3-4aff-b96b-5d942ffe7bea/211029-audi-a8-reveal-16x9-buo" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Звук вищого класу:</b> Розширена звукова система Bang & Olufsen із 3D-звуком. Дозвольте себе зачарувати широким, глибоким і високим звуком. Це створює майже неперевершене автентичне 3D об’ємне звучання в автомобілі – майже як у концертному залі.</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h1><font face="Muli Extra Light">Цифрові матричні фари:</font></h1>
+                <p><font face="Muli Extra Light" size="4"> Підкресліть характер вашого Audi A8 L за допомогою революційної технології фар. 
+                    Проекція світлових зображень високої роздільної здатності забезпечує вражаючі сценарії освітлення та корисні функції освітлення, які можна вибрати окремо.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Індивідуальність на ваш смак</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">Інтер'єр оснащений повністю шкіряною оббивкою Valcona Audi exclusive з комфортними сидіннями з індивідуальним контуром, кольору океанської блакиті з діамантовим сріблом та контрастними строчками і окантовкою кольору діамантового срібла. Вставки з натурального ясена, ексклюзивні ремені безпеки Audi кольору діамантового срібла.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Завжди комфортна температура</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">У холодильному відділенні для зберігання в Audi exclusive достатньо місця для двох 1-літрових пляшок, розміщених горизонтально. Воно оснащене внутрішнім освітленням. Температуру можна встановити від -6 °C до +6 °C. Додаткове відділення барної стійки містить два келихи з написом Audi exclusive.</font></p>
+            </div>
+        </div>
+        <div class="container1">
+        <div class="text content">
+            <h1>Елегантний вигляд</h1>
+            <p>Завдяки елегантним елементам дизайну новий Audi A8 у сірому металічному кольорі символізує спортивну елегантність і високу якість. Помітні деталі решітки радіатора й бамперів, а також динамічна арка даху й незрівнянні риси quattro проявляються в цьому бізнес-седані.</p>
+        </div>
+        <div class="content1">
+            <img src="https://cf-cdn-v6-api.audi.at/files/f0e615870d701ff1de72c14b48658f4e6c0cffbc/2068f9e7-3fc1-44db-b2fd-9c935d63ed92/1920x1920-a820213245?imwidth=768" alt="Audi A6 Limousine">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/574">Конфігуратор</a>
+            <a href="https://www.audi.ua/a8/a8/about#lightbox=5b07c944-1d05-4930-94ef-66ec1f497913">Габарити</a>
+            <a href="https://www.audi.ua/a8/a8/about#lightbox=80c408cf-b977-44d6-9bc6-5df10fce7856">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

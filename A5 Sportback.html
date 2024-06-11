@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audi A5 Sportback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 80px;
+        }
+        .content1 {
+            max-width: 1300px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/fa6ea8c5d6e1af41cdd35c4ad6d846ac3bb82c77/94b2dd5c-efd4-4b45-b877-2d985b2c55f5/crop:SMART/resize:1200:675/a5202019851-l-copy');">
+        <h1>Audi A5 Sportback</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Захопливий і водночас практичний дизайн</font></h1>
+        <p><font face="Muli Extra Light" size="5">Широкі повітрозабірники й хромована облямівка надають різкості лініям передньої частини спортивного п’ятидверного автомобіля. При погляді збоку спортивний характер підкреслюють лінії порогів з виразним вигином у центральній частині, а розширені колісні арки привертають увагу до 20-дюймових легкосплавних колісних дисків (опція). Поперечний молдинг дифузора у матовому сріблястому кольорі Aluminiumsilber і трапецієподібні патрубки вихлопної системи підкреслюють ширину задньої частини. До того ж, Audi A5 Sportback можна персоналізувати за допомогою варіантів комплектації Advanced та S line.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/7b343eef634eeecf3c011aeb43cb9e7f29cc3cb3/9f15bd83-ad1d-4a3b-88e0-3016df664fc0/walkarounda5sportback-s-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Потужна динаміка</font></h1>
+        <p><font face="Muli Extra Light" size="5">Технології підтримки динаміки водіння, такі як пропонована як опція система динамічного рульового керування, у поєднанні з потужними двигунами забезпечують переконливі враження від водіння.</font></p>
+        <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Компроміси? Навіщо?</font></h1>
+                <p><font face="Muli Extra Light"size="4">Завдяки місткому багажному відсіку та салону Audi A5 Sportback можна використовувати як сімейний автомобіль і як автомобіль для дозвілля. Візуально відчуття простору в салоні підсилюють горизонтальні лінії елементів інтер’єру, центральна консоль з добре впорядкованими елементами, чорні глянцеві накладки панелей дверей та високоякісні матеріали. Доступні як опція пакет стилізації інтер’єру Interieur design selection і варіант комплектації S line пропонують додаткові можливості персоналізації. Прогресивну елегантність інтер’єру Audi A5 Sportback надають сучасна панель інформаційно-командної системи та доступний як опція пакет світлодіодної фонової підсвітки Ambiente plus.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/8a8300e25a8262a302c0638d2e8699291ee33aa9/14c806eb-453c-4dd1-845b-3ecf7c719fd7/a5202019841-l-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Яскраве освітлення:</b>У якості опції пропонуються світлодіодні матричні фари Matrix із лазерними модулями Audi. Лазерні модулі Audi доповнюють можливості світлодіодних фар дальнього світла на високих швидкостях і завдяки майже вдвічі більшій дальності освітлення (у порівнянні зі світлодіодними фарами дальнього світла) відчутно підвищують безпеку.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/29c2c2f96dd5d1a4e635b8248563ad4689d2cd0a/277e8c6b-d2be-4a3d-8e84-bd7c846ad2ea/a5202019821-s-l-copy?imwidth=1344" alt="Зображення 1">
+                    <p><b>Найкращий стиль водіння? Той, що відповідає ситуації</b>Доступна як опція система динамічного рульового керування Audi A5 Sportback адаптує передатне число й зусилля, що прикладається для повороту коліс, до швидкості автомобіля і в такий спосіб забезпечує спортивну динаміку та підвищений комфорт руху. А за допомогою системи керування динамікою руху Audi drive select з режимами dynamic (динамічний), comfort (комфортний), auto (автоматичний), individual (користувацький) та efficiency (ефективний), можна у будь-який час адаптувати автомобіль до стилю водіння.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/6971ff509a5fd9589e8104376314c6e129569043/d10d60d8-e470-44ad-a177-9b5c3eb668c8/aa5sbd1910071-l?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Інформація в полі зору:</b>Доступна як опція панель приладів Audi virtual cockpit plus дозволяє переглядати найважливішу інформацію про параметри руху в одному з трьох режимів відображення і пропонує можливість персоналізації інтерфейсу користувача, інтуїтивно зрозумілу структуру меню й адаптовану до потреб водія індикацію.</p>
+                </div>
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/ea129d0f7b8433929132165c2ee6c9ec89493e4a/5d67d482-d058-4ecd-bd54-40fc1f94c268/aa5sbd1910062-l?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Інтуїція?І все під контролем:</b>Керування цифровим світом Audi A5 Sportback є інтуїтивно зрозумілим і здійснюється за допомогою сенсорного дисплею MMI touch діагоналлю 10,1 дюйма або за допомогою голосових команд. A5 Sportback також пропонує великий вибір доступних як опція послуг Audi connect, як-от пошук спеціальних об’єктів (POI) онлайн.</p>
+                </div>
+
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <h1><font face="Muli Extra Light">Функційність чи дизайн? Усе разом</font></h1>
+                <p><font face="Muli Extra Light" size="4"> Оригінальні аксесуари Audi пропонують численні можливості для того, щоб зробити Audi A5 Sportback ще більш багатогранним. До вашої уваги — функційні рішення з неймовірним дизайном, що ідеально пасують за розмірами (наприклад, бокс для лиж і багажу) та полегшують перевезення додаткового багажу в ході повсякденної експлуатації.</font></p>
+            </div>
+            <div class="feature">
+                <h1><font face="Muli Extra Ligh">Захоплива гра світла</font></h1>
+                <p><font face="Muli Extra Ligh" size="4">Доступні як опція світлодіодні ліхтарі підсвічування зони посадки з оригінальних аксесуарів Audi відрізняються особливою проєкцією логотипа та підвищеною яскравістю.</font></p>
+            </div>
+        </div>
+        <div class="container1">
+        <div class="content1">
+            <img src="https://cf-cdn-v6-api.audi.at/images/fa6ea8c5d6e1af41cdd35c4ad6d846ac3bb82c77/94b2dd5c-efd4-4b45-b877-2d985b2c55f5/crop:SMART/resize:1200:675/a5202019851-l-copy">
+        </div>
+    </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/reference-models/494">Конфігуратор</a>
+            <a href="https://www.audi.ua/a5/a5-sportback/about#lightbox=d9e9a1fa-0370-4529-8e04-5fe0cd1b9c39">Габарити</a>
+            <a href="https://www.audi.ua/a5/a5-sportback/about#lightbox=eebd43c2-0b4c-4618-828b-c09db9821cc3">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>

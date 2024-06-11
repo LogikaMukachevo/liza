@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Audi e-tron GT quattro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .header { 
+            background-color: #ffffff; 
+            color: #fff; 
+            text-align: left; 
+            padding: 10px 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: slideDown 1s ease-in-out;
+        } 
+ 
+        .header img { 
+            max-width: 90px; /* змінено максимальну ширину */ 
+            height: auto; 
+            margin-right: 10px; /* додано відступ справа */ 
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        #slider {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 20px 145px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #prev {
+            left: 10px;
+        }
+        #next {
+            right: 10px;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .parallax h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .button:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        .content {
+            padding: 20px;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header-img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            height: 60%;
+        }
+        .ou{
+            text-align:center;
+        }
+        .container1 {
+            display: flex;
+            height: 20vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 60px;
+        }
+        .content1 {
+            max-width: 1200px;
+        }
+        .content1 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container2 {
+            display: flex;
+            height: 40vh;
+            background-color: black;
+            color: white;
+            text-align: left;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://www.audi.ua/logo.svg" alt="Audi Logo">
+    </header>
+    <div class="parallax" style="background-image: url('https://cf-cdn-v6-api.audi.at/images/bb15acf42de7fa78d3d27a86618f170cdc2ed189/f52da574-68c2-4887-9bf7-e53336480330/crop:SMART/resize:1920:1080/egt20212312v1-l-copy');">
+        <h1>e-tron GT quattro</h1>
+    </div>
+    <div class="content">
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Дизайн інтер’єру</font></h1>
+        <p><font face="Muli Extra Light" size="5">Audi e-tron GT quattro демонструє прогрес у сучасний спосіб. Він одночасно випромінює спортивний характер, високу якість та комфорт. Передні спортивні сидіння plus із інтегрованими підголівниками забезпечують завдяки розвиненим боковинам чудову бокову підтримку в поворотах та при керуванні у спортивному стилі.</font></p>
+        <video class="header-img" controls autoplay>
+            <source src="https://cf-cdn-v6-api.audi.at/files/b045a83a2189b0e2eba7c4c1bc58666203f1bc05/e173a1c7-0672-4036-8f84-7232ebedbe56/avpconpro-2147drivingsceneetrongtmobilelq" type="video/mp4" alt="Audi Q7 Image">
+        </video>
+        <h1 class="ou"><font face="Muli Extra Light" size="6">Анімована світлова смуга</font></h1>
+        <p><font face="Muli Extra Light" size="5">На всю ширину задньої частини простягається анімована світлова смуга, обмежена по краях окремими світлодіодними модулями клиноподібної форми. Уперше для моделей Audi ліхтарі заднього ходу одночасно виконують функцію покажчиків повороту.</font>
+            <div class="container2">
+            <div class="content1">
+                <h1><font face="Muli Extra Light" size="7">Чудовий запас ходу та впевненість</font></h1>
+                <p><font face="Muli Extra Light"size="4">Розташована горизонтально у днищі кузова високовольтна акумуляторна батарея з напругою 800 В забезпечує небачену досі ефективність — як під час заряджання, так і під час живлення системи привода. У разі активованої системи рекуперації запас ходу сягає 501 км за стандартом WLTP.
+
+                    Залишайтесь впевненими у майбутньому завдяки гарантії на високовольтну акумуляторну батарею 8 років або 160 000 км пробігу, в залежності від того, яка з двох подій настане раніше.</font></p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="slider">
+                <div class="slide active">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/7c1cf9079fc98c4e278e71c94e9eda4e4e17f490/94fdfaf3-4086-48aa-a597-6ad79675277d/1602-copy?imwidth=1920&imdensity=1" alt="Зображення 1">
+                    <p><b>Заряджання вдома:</b>Audi e-tron GT quattro у стандартній комплектації можна заряджати від джерела змінного струму з максимальною потужністю 11 кВт. Для швидшого заряджання вдома з потужністю до 22 кВт можна скористатися зарядним пристроєм, розрахованим на заряджання змінним струмом потужністю до 22 кВт.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/a0f212ae7c02f7a254d6f93af900e775cd6801ca/73f2edb9-1b1a-4ed9-a77d-148acc6cc444/1920x900-egt20212305v3-copy?imwidth=1920&imdensity=1" alt="Зображення 3">
+                    <p><b>Швидкісне заряджання</b> Audi e-tron GT quattro також демонструє свою ефективність під час заряджання: на зарядних станціях з напругою 800 В він може заряджатися з потужністю до 270 кВт — вже у стандартній комплектації. Приблизно за 5 хвилин можна зарядити автомобіль енергією, достатньою для подолання наступних 100 км. Приблизно за 22,5 хвилини акумуляторна батарея заряджається з 5 % до приблизно 80 %.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/32e27b3b3a67082be473b7055f30f01f47724de6/b3cd3473-167c-4bdf-a588-a5a1dc0d8111/2101dynamic#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Аеродинамічні характеристики</b> За допомогою двохпозиційного заднього спойлера і передніх повітрозабірників відбувається активна адаптація аеродинамічних характеристик автомобіля відповідно до дорожньої ситуації.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/7c857089796499e69948e95cce6408f0e85b9561/1743b2cf-6917-4c55-9e47-a052295b3835/2102?imwidth=1344" alt="Зображення 3">
+                    <p><b>Легкосплавні колісні диски</b> Колеса з оптимізованою аеродинамікою довершують ефективну й водночас високоякісну концепцію автомобіля.</p>
+                </div>
+                <div class="slide">
+                    <img src="https://cf-cdn-v6-api.audi.at/files/2a19eb641bb2ef36a2108fcdaec67a46deb89660/880c87a0-d52e-4d7c-97aa-5a169610feb9/q8e20224450withoutcast-l-copy?imwidth=1024" alt="Зображення 3">
+                    <p><b>Дизайн, що сяє:</b> Audi SQ8 e-tron встановлює стандарти для електричної мобільності, орієнтованої на майбутнє: завдяки прогресивним акцентам нової стратегії ідентифікації Audi, як-от кільця Audi у 2D‑дизайні, оновлений дизайн передньої частини та доступна як опція проєкційна підсвітка решітки радіатора Singleframe.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/e1b234e4f2ff095c7f0f71ab5ad6c4bfb45146ab/7d193b86-c283-4157-9225-f9d170d89ff2/exteriormirrors15secclean-l#t=0.001" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Візіонерське бачення</b> Маленькі камери в доступних як опція віртуальних зовнішніх дзеркалах заднього виду проєктують зображення на 7-дюймові OLED-дисплеї в салоні. Ви можете чітко бачити транспортні засоби, що наближаються, попри відблиски фар. До того ж камери забезпечують покращений коефіцієнт аеродинамічного опору.</p>
+                </div>
+                <div class="slide">
+                    <video class="header-img" controls autoplay>
+                        <source src="https://cf-cdn-v6-api.audi.at/files/df452b05ea3deec572598d5dc0041496247f336a/6dcd7a90-b468-42ee-91ff-39ef23ceb185/interiorq8e-tronau51xsportback-l" type="video/mp4" alt="Audi Q7 Image">
+                    </video>
+                    <p><b>Увага до дрібниць</b> Відкрийте для себе інтер'єр Audi SQ8 e‑tron: строчка червоного кольору від Audi Sport GmbH, доступні як опція спортивні передні сидіння, оздоблені шкірою Valcona з тисненим символом S, і доступні як опція декоративні вставки з карбону з малюнком плетіння «квадрат».</p>
+                </div>
+                <div class="button-container">
+                    <button id="prev" class="nav-button">&lt;</button>
+                    <button id="next" class="nav-button">&gt;</button>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const slides = document.querySelectorAll('#slider .slide');
+                    let currentIndex = 0;
+
+                    function showSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            if (i === index) {
+                                slide.classList.add('active');
+                                setTimeout(() => slide.style.opacity = '1', 50);
+                            }
+                        });
+                    }
+                    document.getElementById('next').addEventListener('click', function() {
+                        currentIndex = (currentIndex + 1) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    document.getElementById('prev').addEventListener('click', function() {
+                        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                        showSlide(currentIndex);
+                    });
+
+                    showSlide(currentIndex); // Показати перший слайд
+                });
+            </script>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <p <font size="6"><b>Атмосфера, насичена контрастами</b> Персоналізуйте інтер’єр, наприклад за допомогою оббивки з високоякісної шкіри Nappa сіро-чорного кольору Jetgrau-schwarz від Audi exclusive. Сидіння, доступне як опція кермо з оббивкою з алькантари та шкіри з позначкою на 12 годинах і пропоновані як опція ремені безпеки з кольоровим кантом від Audi exclusive прикрашені високоякісною строчкою зеленого кольору Iguanagrün.</font></p>
+            </div>
+            <div class="feature">
+                <img src="https://cf-cdn-v6-api.audi.at/files/dfab2f9635f734b8afbc3148d75ef37ef77f8710/c9412a98-77e2-4422-8284-7222d2bcc116/egtae20223851-l?imwidth=1024" alt="Зображення 3">
+            </div>
+        </div>
+        <div class="container1">
+            <div class="content1">
+                <p><b>Audi exclusive</b> Перетворіть свій Audi e-tron GT на автомобіль, що дарує натхнення, такий саме неповторний, як ви, — за допомогою Audi exclusive. Завдяки вишуканому декору, різнокольоровій шкіряній оббивці та індивідуально підібраному лакофарбовому покриттю із широким асортиментом кольорів. Саме такий, яким його бачите ви.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <a href="https://cc.audi.ua/cc-ua/uk_UA_AUDI23/A/models">Конфігуратор</a>
+            <a href="https://www.audi.ua/e-tron-gt/e-tron-gt-quattro/about#lightbox=bc5abff2-9978-4915-ba0d-2e710912cb95">Габарити</a>
+            <a href="https://www.audi.ua/e-tron-gt/e-tron-gt-quattro/about#lightbox=d6644bc4-9873-4891-8592-eb6e2bc03a3d">Технічні характеристики</a>
+        </nav>
+        <p>&copy; 2024 Audi. Всі права захищені.</p>
+        <p>&copy; Зверніть, будь ласка, увагу, що інформація на сайті наведена лише для ознайомлення. Функції та їх наявність в автомобілі можуть відрізнятися в залежності від їх доступності в країні та/або технічних характеристик (конфігурації) автомобіля. За детальною інформацією звертайтесь до найближчого авторизованого дилера Audi. Дана інформація по автомобілю не є публічною пропозицією щодо придбання товару. Дана інформація по автомобілю також не є рекламою та не зобовязує жодну зі сторін до продажу чи придбання автомобіля. Точна комплектація та перелік опцій вказуються у договорах купівлі-продажу автомобіля, які підписані з офіційним дилером в Україні. Будь ласка, перед підписанням договору купівлі-продажу автомобіля з офіційним дилером в Україні детально ознайомтесь з точною ціною та комплектацією автомобіля.</p>
+        <p id="contact">
+            <a href="https://www.audi.ua/privacy/copyright" style="text-decoration: none; color: white; margin-right: 20px;">Авторське право</a>
+            <a href="https://www.audi.ua/privacy/privacy-data" style="text-decoration: none; color: white; margin-right: 20px;">Захист даних</a>
+            <a href="https://www.audi.ua/service-and-accessories/audi-service/audi-assistance#lightbox=1c8d5847-994b-48a7-82c6-95e1e3a3d53c" style="text-decoration: none; color: white; margin-right: 20px;">Юридична інформація</a>
+            <a href="https://www.porscheukraine.com.ua/uk/company/comliance/sistema-whistle-blower" style="text-decoration: none; color: white; margin-right: 20px;">Система повідомлення про порушення</a>
+        </p>
+        <p>
+            <a href="https://www.facebook.com/AudiUkraine/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/0757087219a4434891d7c2b4c670f2fa5984107c/05f95fc1-6c3b-49bb-81a0-115393a25380/facebook" alt="Facebook" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.instagram.com/audi_ua/" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/4e0a9b2cb5552732abcff78c32a4f9511587831f/50274bb0-d26b-49d1-aa08-f5803f1faff6/instagram" alt="Instagram" style="width: 30px; height: 30px;">
+            </a>
+            <a href="https://www.youtube.com/user/audiua" style="text-decoration: none; color: white; margin-right: 20px;">
+                <img src="https://cf-cdn-v6-api.audi.at/files/47cc63357821b67c98fe0e149685dc6ed916c0cf/c99f4eec-3f47-496b-a55a-7513ccdbe40c/youtube" alt="YouTube" style="width: 30px; height: 30px;">
+            </a>
+        </p>
+    </footer>
+</body>
+</html>
